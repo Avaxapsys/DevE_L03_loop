@@ -35,7 +35,7 @@ namespace DevE_L03_loop
                     break;
 
                 case 2:
-                    SecondTask();
+                    SecondTask(); 
                     break;
 
                 case 3:
@@ -212,7 +212,33 @@ namespace DevE_L03_loop
 
         static void EighthTask()
         {
-            Console.WriteLine("I'll try it later");
+            int firstNumber = GetInput("");
+            int n_number = 1;
+            int mid = firstNumber % 2;
+
+            mid = mid == 0 ? firstNumber / 2 : (firstNumber - n_number) / 2;
+
+            int up = mid;
+            int down = mid;
+
+            Console.Write("N equal: ");
+
+            for (; n_number <= firstNumber; n_number++)
+            {
+                if (Math.Pow(up, 3) == firstNumber)
+                {
+                    Console.WriteLine(up);
+                    break;
+                }
+                if (Math.Pow(down, 3) == firstNumber)
+                {
+                    Console.WriteLine(down);
+                    break;
+                }
+                up++;
+                down--;
+            }
+            
         }
 
         static void NinthTask()
